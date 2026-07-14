@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | AIGC Video & AI Demo</title>
+    <meta
+      name="description"
+      content="暗色系个人作品集，展示 AIGC 视频、电影开头、短视频剪辑与 AI 应用 Demo。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="回到首页">
+          <span class="brand-mark"></span>
+          Portfolio
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a href="#works">Works</a>
+          <a href="#process">Process</a>
+          <a href="#profile">Profile</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-label="首页">
+          <video
+            class="hero-video"
+            src="./videos/cinematic-opening.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          ></video>
+          <div class="hero-shade"></div>
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <p class="kicker">AIGC Video / Editing / AI Tool Demo</p>
+              <h1>用影像质感和 AI 工作流，把想法做成能被看见的作品。</h1>
+              <p>
+                作品集聚焦电影感 AIGC 视频、商业短片剪辑、视觉概念和轻量 AI 应用。当前版本先完成基础展示框架，后续可继续根据参考网站优化动效、详情页和视觉系统。
+              </p>
+            </div>
+            <aside class="hero-panel" aria-label="作品集摘要">
+              <div>
+                <span>Current Focus</span>
+                <strong>AIGC 影像创作</strong>
+              </div>
+              <div>
+                <span>Representative</span>
+                <strong>电影开头概念片</strong>
+              </div>
+              <div>
+                <span>Also Include</span>
+                <strong>短视频剪辑 / AI 文档助手</strong>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="marquee" aria-label="核心方向">
+          <span>Cinematic Opening</span>
+          <span>AIGC Visual</span>
+          <span>Commercial Editing</span>
+          <span>AI Document Assistant</span>
+        </section>
+
+        <section id="works" class="section works-section" aria-label="精选作品">
+          <div class="section-head">
+            <p class="kicker">Selected Works</p>
+            <h2>精选作品</h2>
+            <p>
+              先用项目索引式结构呈现：左侧是作品列表，右侧是当前作品预览。点击任一项目可查看详情与视频。
+            </p>
+          </div>
+
+          <div class="work-filters" aria-label="作品分类">
+            <button class="filter is-active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="aigc">AIGC</button>
+            <button class="filter" type="button" data-filter="video">Video</button>
+            <button class="filter" type="button" data-filter="ai-app">AI App</button>
+          </div>
+
+          <div class="work-board">
+            <div class="work-list" aria-label="作品列表">
+              <button class="work-row is-active" type="button" data-project="cinematic-opening" data-category="aigc video">
+                <span class="work-no">01</span>
+                <span class="work-main">
+                  <strong>电影开头概念片</strong>
+                  <em>Cinematic Opening / Kling</em>
+                </span>
+                <span class="work-year">2026</span>
+              </button>
+
+              <button class="work-row" type="button" data-project="slow-aging" data-category="video">
+                <span class="work-no">02</span>
+                <span class="work-main">
+                  <strong>西装赴约，青春已老</strong>
+                  <em>短视频节选 / 情绪叙事</em>
+                </span>
+                <span class="work-year">2026</span>
+              </button>
+
+              <button class="work-row" type="button" data-project="laundry-ad" data-category="video">
+                <span class="work-no">03</span>
+                <span class="work-main">
+                  <strong>超能洗衣液广告</strong>
+                  <em>Commercial Video</em>
+                </span>
+                <span class="work-year">2026</span>
+              </button>
+
+              <button class="work-row" type="button" data-project="pr-editing" data-category="video">
+                <span class="work-no">04</span>
+                <span class="work-main">
+                  <strong>PR 剪辑作品</strong>
+                  <em>Premiere Editing</em>
+                </span>
+                <span class="work-year">2026</span>
+              </button>
+
+              <button class="work-row" type="button" data-project="doc-assistant" data-category="ai-app">
+                <span class="work-no">05</span>
+                <span class="work-main">
+                  <strong>AI 文档整理助手</strong>
+                  <em>AI Application Demo</em>
+                </span>
+                <span class="work-year">2026</span>
+              </button>
+            </div>
+
+            <aside class="preview-stage" aria-label="当前作品预览">
+              <div class="preview-media" id="previewMedia"></div>
+              <div class="preview-copy">
+                <p class="kicker" id="previewType">Cinematic Opening</p>
+                <h3 id="previewTitle">电影开头概念片</h3>
+                <p id="previewSummary"></p>
+                <button class="detail-button" type="button" id="openCurrent">查看项目</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="process" class="section process-section" aria-label="AIGC 工作流">
+          <div class="section-head compact">
+            <p class="kicker">AIGC Workflow</p>
+            <h2>AIGC 工作流会作为作品的一部分呈现。</h2>
+          </div>
+          <div class="process-grid">
+            <article>
+              <span>01</span>
+              <h3>选题定位</h3>
+              <p>明确作品主题、目标受众、情绪气质和最终展示场景。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>脚本分镜</h3>
+              <p>把创意拆成镜头顺序、画面描述、运动方式和节奏节点。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>AI 生成</h3>
+              <p>用提示词、参考图和多轮迭代控制画面质感与风格一致性。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>剪辑包装</h3>
+              <p>完成剪辑、配乐、调色、字幕、封面和作品集项目说明。</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="profile" class="section profile-section" aria-label="个人介绍">
+          <div class="profile-copy">
+            <p class="kicker">Profile</p>
+            <h2>Nong Lei</h2>
+            <p>
+              AIGC 视频创作与剪辑方向。关注 AI 生成影像、短视频内容包装和轻量 AI 工具在实际场景中的应用。这个作品集目前作为基础版本，后续会继续补充项目截图、AIGC 工作流、参考网站和完整作品链接。
+            </p>
+          </div>
+          <div class="capability-list" aria-label="能力标签">
+            <span>Prompt Design</span>
+            <span>AIGC Video</span>
+            <span>Storyboarding</span>
+            <span>Video Editing</span>
+            <span>Commercial Short Film</span>
+            <span>Documentation</span>
+            <span>AI Tool Demo</span>
+            <span>Portfolio Design</span>
+          </div>
+        </section>
+
+        <section id="contact" class="section contact-section" aria-label="联系方式">
+          <p class="kicker">Contact</p>
+          <h2>Nong Lei / AIGC Video Portfolio</h2>
+          <div class="contact-links">
+            <a href="mailto:1071773407@qq.com">1071773407@qq.com</a>
+            <a href="tel:18077653183">18077653183</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle">
+      <button class="dialog-close" type="button" aria-label="关闭项目详情">×</button>
+      <div class="dialog-grid">
+        <div class="dialog-media" id="dialogMedia"></div>
+        <div class="dialog-body">
+          <p class="kicker" id="dialogType"></p>
+          <h2 id="dialogTitle"></h2>
+          <p id="dialogSummary"></p>
+          <dl class="project-meta">
+            <div>
+              <dt>职责</dt>
+              <dd id="dialogRole"></dd>
+            </div>
+            <div>
+              <dt>工具</dt>
+              <dd id="dialogTools"></dd>
+            </div>
+            <div>
+              <dt>亮点</dt>
+              <dd id="dialogHighlight"></dd>
+            </div>
+          </dl>
+          <div class="dialog-actions" id="dialogActions"></div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

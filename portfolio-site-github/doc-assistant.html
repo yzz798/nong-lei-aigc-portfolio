@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Document Assistant | AI 文档整理助手</title>
+    <meta
+      name="description"
+      content="轻量 AI 文档整理助手 Demo，支持文本清洗、摘要、FAQ 和用户手册生成。"
+    />
+    <link rel="stylesheet" href="./doc-assistant.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="back-link" href="./index.html#works">返回作品集</a>
+      <div class="header-copy">
+        <p class="eyebrow">AI Application Demo</p>
+        <h1>AI 文档整理助手</h1>
+        <p>
+          粘贴一段杂乱文档，一键生成清洗文本、摘要、FAQ 或用户手册草稿。这个 Demo 用来展示文档清洗、预处理和技术文档生成的 PoC 思路。
+        </p>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="tool-panel" aria-label="文档输入和处理">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Input</p>
+            <h2>原始文档</h2>
+          </div>
+          <button class="ghost-button" type="button" id="loadSample">载入示例</button>
+        </div>
+
+        <label class="input-label" for="sourceText">粘贴需要整理的文档</label>
+        <textarea id="sourceText" spellcheck="false"></textarea>
+
+        <div class="action-grid" aria-label="处理任务">
+          <button class="action-button is-primary" type="button" data-action="clean">
+            清洗文本
+            <span>去空行、整理格式</span>
+          </button>
+          <button class="action-button" type="button" data-action="summary">
+            生成摘要
+            <span>提炼 3-5 条重点</span>
+          </button>
+          <button class="action-button" type="button" data-action="faq">
+            生成 FAQ
+            <span>转成问答形式</span>
+          </button>
+          <button class="action-button" type="button" data-action="manual">
+            用户手册
+            <span>整理成操作说明</span>
+          </button>
+          <button class="action-button wide" type="button" data-action="route">
+            智能判断任务
+            <span>根据输入意图自动选择输出格式</span>
+          </button>
+        </div>
+      </section>
+
+      <aside class="result-panel" aria-label="输出结果">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Output</p>
+            <h2 id="resultTitle">等待处理</h2>
+          </div>
+          <div class="result-actions">
+            <button class="icon-button" type="button" id="copyResult" aria-label="复制结果">复制</button>
+            <button class="icon-button" type="button" id="downloadResult" aria-label="下载结果">下载</button>
+          </div>
+        </div>
+
+        <div class="status-row">
+          <span id="taskBadge">Ready</span>
+          <span id="qualityBadge">Local Demo</span>
+        </div>
+
+        <pre id="resultText">请在左侧输入文档，或点击“载入示例”。</pre>
+      </aside>
+    </main>
+
+    <section class="case-section" aria-label="项目说明">
+      <article>
+        <p class="eyebrow">Portfolio Case</p>
+        <h2>这个项目在作品集里怎么讲</h2>
+        <p>
+          这是一个面向企业文档场景的轻量 AI 应用 Demo，覆盖 document cleansing、preprocessing、FAQ generation、manual drafting 和 PoC validation。当前版本在本地完成规则化演示，后续可以接入大模型 API 或 RAG 知识库。
+        </p>
+      </article>
+      <div class="case-tags">
+        <span>Document Cleansing</span>
+        <span>Preprocessing</span>
+        <span>FAQ Generation</span>
+        <span>User Manual</span>
+        <span>AI PoC</span>
+      </div>
+    </section>
+
+    <script src="./doc-assistant.js"></script>
+  </body>
+</html>
