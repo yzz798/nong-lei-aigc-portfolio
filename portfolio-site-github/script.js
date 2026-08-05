@@ -41,6 +41,15 @@ const projects = {
     tools: "Premiere Pro / 剪映 / 品牌短片剪辑",
     highlight: "比单纯练习更贴近商业内容场景，适合放在作品集中证明你能处理产品广告类素材。",
   },
+  "game-performance-ad": {
+    type: "Game Performance Ad",
+    title: "游戏买量广告",
+    video: "./videos/game-performance-ad.mp4",
+    summary: "面向游戏信息流投放制作的买量广告，通过真人开场钩子、角色与抽卡展示、实机战斗和福利信息推动观看与转化。",
+    role: "素材筛选 / 广告结构 / 节奏剪辑 / 游戏录屏混剪 / 福利包装",
+    tools: "Premiere Pro / 剪映 / Game Advertising / Performance Creative",
+    highlight: "将真人素材、角色展示、实机画面与转化信息组织成完整的商业投放视频，体现买量素材制作能力。",
+  },
   "pr-editing": {
     type: "Premiere Editing",
     title: "PR 剪辑作品",
