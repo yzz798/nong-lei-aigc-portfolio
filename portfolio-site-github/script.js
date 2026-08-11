@@ -3,6 +3,7 @@ const projects = {
     type: "Cinematic Opening",
     title: "电影开头概念片",
     video: "./videos/cinematic-opening.mp4",
+    poster: "./assets/video-posters/cinematic-opening.jpg",
     summary:
       "使用可灵生成的电影片头概念视频，定位为超写实电影级视觉开场。项目重点展示 AIGC 视频生成中的氛围建立、镜头运动、真实质感和开场叙事感。",
     role: "视觉概念设定 / AIGC 视频生成 / 片头氛围设计 / 作品筛选与包装",
@@ -13,6 +14,7 @@ const projects = {
     type: "Short Video Editing",
     title: "西装赴约，青春已老",
     video: "./videos/slow-aging-preview.webm",
+    poster: "./assets/slow-aging-cover.png",
     links: [
       {
         label: "抖音完整版",
@@ -34,6 +36,7 @@ const projects = {
     type: "Commercial Video",
     title: "超能洗衣液广告",
     video: "./videos/laundry-ad.mp4",
+    poster: "./assets/video-posters/laundry-ad.jpg",
     images: ["./assets/image-works/laundry-storyboard.jpg"],
     summary:
       "品牌广告方向作品，适合展示商业短片的产品卖点表达、画面节奏和广告包装思路。可作为视频剪辑与内容营销方向的案例补充。",
@@ -44,7 +47,8 @@ const projects = {
   "game-performance-ad": {
     type: "Game Performance Ad",
     title: "游戏买量广告",
-    video: "./videos/game-performance-ad.mp4",
+    video: "./videos/game-performance-ad-web.mp4",
+    poster: "./assets/video-posters/game-performance.jpg",
     summary: "面向游戏信息流投放制作的买量广告，通过真人开场钩子、角色与抽卡展示、实机战斗和福利信息推动观看与转化。",
     role: "素材筛选 / 广告结构 / 节奏剪辑 / 游戏录屏混剪 / 福利包装",
     tools: "Premiere Pro / 剪映 / Game Advertising / Performance Creative",
@@ -54,6 +58,7 @@ const projects = {
     type: "Premiere Editing",
     title: "PR 剪辑作品",
     video: "./videos/pr-editing-preview.mp4",
+    poster: "./assets/video-posters/pr-editing.jpg",
     links: [
       {
         label: "查看高清原片",
@@ -80,7 +85,8 @@ const projects = {
   "coca-cola-ad": {
     type: "Commercial / AIGC Video",
     title: "可口可乐广告设计",
-    video: "./videos/coca-cola-ad.mp4",
+    video: "./videos/coca-cola-ad-web.mp4",
+    poster: "./assets/video-posters/coca-cola.jpg",
     summary: "围绕可口可乐品牌调性完成的商业广告影像设计，通过鲜明的红色视觉、产品特写和节奏化镜头强化清爽、活力与分享感。",
     role: "广告创意 / 视觉概念 / AIGC 画面生成 / 剪辑包装 / 成片输出",
     tools: "AIGC Video / Premiere Pro / 剪映 / 品牌广告设计",
@@ -187,11 +193,15 @@ function mediaMarkup(project, mode = "preview") {
   }
 
   if (project.video) {
-    const controls = mode === "dialog" ? "controls" : "autoplay muted loop";
+    if (mode === "preview") {
+      return `<div class="video-poster"><img src="${project.poster || "./assets/video-thumb.jpg"}" alt="${project.title} project cover" loading="lazy" /><span aria-hidden="true">▶</span></div>`;
+    }
+
+    const controls = "controls";
     const start = project.clipStart ?? 0;
     const end = project.clipEnd ?? "";
-    const loopClip = mode === "preview" ? "true" : "false";
-    const video = `<video src="${project.video}" ${controls} playsinline preload="metadata" data-start="${start}" data-end="${end}" data-loop-clip="${loopClip}"></video>`;
+    const loopClip = "false";
+    const video = `<video src="${project.video}" ${controls} playsinline preload="none" poster="${project.poster || ""}" data-start="${start}" data-end="${end}" data-loop-clip="${loopClip}"></video>`;
     if (mode === "dialog" && project.images?.length) {
       return `<div class="project-media-stack">${video}${galleryMarkup(project)}</div>`;
     }
