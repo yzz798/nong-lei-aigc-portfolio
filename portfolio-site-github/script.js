@@ -105,7 +105,7 @@ const projects = {
   "ai-visual-workflow": {
     type: "AIGC Visual / Workflow",
     title: "AI 视觉与工作流",
-    images: ["./assets/image-works/ai-image-to-video.png", "./assets/image-works/ai-workflow.png"],
+    images: ["./assets/image-works/ai-image-to-video.webp", "./assets/image-works/ai-workflow.webp"],
     summary: "从 AI 图像生成、镜头设定到图生视频的流程展示，呈现电影感场景设计和 AIGC 内容生产方法。",
     role: "场景构思 / 提示词设计 / 图像生成 / 工作流整理",
     tools: "AIGC Image / AIGC Video / Prompt Design",
@@ -114,7 +114,7 @@ const projects = {
   "information-visualization": {
     type: "Information Visualization",
     title: "信息可视化设计",
-    images: ["./assets/image-works/information-visualization.png"],
+    images: ["./assets/image-works/information-visualization.webp"],
     summary: "围绕茶文化主题进行信息层级、数据图形和东方视觉元素的整合设计。",
     role: "信息整理 / 版式设计 / 图形表达 / 视觉统一",
     tools: "Photoshop / Illustrator / Information Design",
@@ -123,7 +123,7 @@ const projects = {
   "commercial-posters": {
     type: "Commercial Poster Design",
     title: "商业海报设计",
-    images: ["./assets/image-works/poster-design.png", "./assets/image-works/promo-poster.png"],
+    images: ["./assets/image-works/poster-design.webp", "./assets/image-works/promo-poster.webp"],
     summary: "包含可口可乐商业海报与东方建筑主题宣传海报，探索品牌冲击力和文化视觉表达。",
     role: "创意构图 / 主视觉设计 / 字体排版 / 氛围塑造",
     tools: "Photoshop / AIGC Image / Poster Design",
@@ -132,7 +132,7 @@ const projects = {
   "ecommerce-ads": {
     type: "E-commerce Advertising",
     title: "电商广告设计",
-    images: ["./assets/image-works/ecommerce-ad-01.jpg", "./assets/image-works/ecommerce-ad-02.jpg"],
+    images: ["./assets/image-works/ecommerce-ad-01.webp", "./assets/image-works/ecommerce-ad-02.webp"],
     summary: "围绕耳机产品完成深色科技与浅色生活方式两套电商广告视觉。",
     role: "产品卖点提炼 / KV 设计 / 电商排版 / 视觉合成",
     tools: "Photoshop / E-commerce Design / AIGC Image",
@@ -141,7 +141,7 @@ const projects = {
   "movie-poster": {
     type: "Movie Poster",
     title: "电影海报设计",
-    images: ["./assets/image-works/movie-poster.jpg"],
+    images: ["./assets/image-works/movie-poster.webp"],
     summary: "以悬疑电影《Midnight Signal》为概念进行人物、光影和标题系统设计。",
     role: "概念设定 / 人物视觉 / 海报合成 / 字体排版",
     tools: "Photoshop / AIGC Image / Poster Design",
@@ -150,7 +150,7 @@ const projects = {
   "winter-campaign": {
     type: "Game Campaign Visual",
     title: "无尽冬日广告视觉",
-    images: ["./assets/image-works/winter-ad-cover.jpg"],
+    images: ["./assets/image-works/winter-ad-cover.webp"],
     summary: "面向冰雪生存题材游戏制作的横版广告封面，强化世界观、人物与生存氛围。",
     role: "广告封面 / 场景合成 / 氛围设计 / 标题布局",
     tools: "Photoshop / Game Advertising / AIGC Image",
@@ -159,7 +159,7 @@ const projects = {
   "perfume-visuals": {
     type: "Brand / Product Visual",
     title: "香水品牌视觉设计",
-    images: ["./assets/image-works/perfume-product.png", "./assets/image-works/perfume-ecommerce-01.jpg", "./assets/image-works/perfume-ecommerce-02.jpg", "./assets/image-works/perfume-ecommerce-03.jpg", "./assets/image-works/perfume-ecommerce-04.jpg"],
+    images: ["./assets/image-works/perfume-product.webp", "./assets/image-works/perfume-ecommerce-01.webp", "./assets/image-works/perfume-ecommerce-02.webp", "./assets/image-works/perfume-ecommerce-03.webp", "./assets/image-works/perfume-ecommerce-04.webp"],
     summary: "围绕香水产品建立统一品牌质感，并延展出黑木、柔光、琥珀与暗红果实等系列电商视觉。",
     role: "产品视觉 / 场景设定 / 系列化设计 / 电商延展",
     tools: "Photoshop / AIGC Image / Product Visualization",
@@ -210,7 +210,7 @@ function mediaMarkup(project, mode = "preview") {
 
   if (project.images?.length) {
     if (mode === "dialog") return galleryMarkup(project);
-    return `<img src="${project.images[0]}" alt="${project.title} 项目封面" />`;
+    return `<img src="${project.images[0]}" alt="${project.title} 项目封面" loading="lazy" decoding="async" />`;
   }
 
   if (project.image) {
